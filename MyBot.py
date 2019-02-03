@@ -14,9 +14,16 @@ start_time = datetime.datetime.utcnow()
 startup_extensions=['Music']
 
 @client.event
+async def auto_run():
+    while True:
+        print('Keeping bot up')
+        await asyncio.sleep(900)
+
+@client.event
 async def on_ready():
     await client.change_presence(game=discord.Game(name='!Menu'))
     print('Bot is loaded') #This will be called when the bot connects to the server.
+client.loop.create_task(auto_run())
 
 class Main_Commands():
     def __init__(self, bot):
