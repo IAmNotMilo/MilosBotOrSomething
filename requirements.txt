@@ -1,0 +1,4 @@
+discord
+asynco
+youtube_dl
+pip
